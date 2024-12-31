@@ -5,6 +5,9 @@ name: Build Canary Version
 on:
    push:
 
+permissions:
+  contents: write
+
 jobs:
   release:
     name: Release on MacOS
