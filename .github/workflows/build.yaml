@@ -1,0 +1,31 @@
+# Origin config by @Kilerd
+
+name: Build Canary Version
+
+on:
+    workflow_dispatch:
+
+jobs:
+  release:
+    name: Release on MacOS
+    runs-on: macos-latest
+            
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup pixi
+        uses: prefix-dev/setup-pixi@v0.8.1
+        with:
+            pixi-version: v0.39.2
+      - name: Build with nuitka
+        shell: bash
+        run: |
+            pixi run nuitka --standalone ./main.py --enable-plugin=tk-inter
+            tar cvzf macos-arm64.tar.gz main.dist
+
+      - name: Pre-Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: macos-arm64.tar.gz
+          tag_name: nightly
+          prerelease: false
