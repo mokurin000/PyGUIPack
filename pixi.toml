@@ -1,0 +1,16 @@
+[project]
+authors = ["poly000 <1348292515a@gmail.com>"]
+channels = ["conda-forge"]
+description = "Add a short description here"
+name = "PyGUIPack"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "<3.13"
+pandas = ">=2.2.3,<3"
+
+nuitka = ">=2.5.9,<3"
+ordered-set = ">=4.1.0,<5"
