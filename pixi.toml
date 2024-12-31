@@ -3,7 +3,7 @@ authors = ["poly000 <1348292515a@gmail.com>"]
 channels = ["conda-forge"]
 description = "Add a short description here"
 name = "PyGUIPack"
-platforms = ["win-64"]
+platforms = ["win-64", "osx-arm64"]
 version = "0.1.0"
 
 [tasks]
