@@ -17,11 +17,11 @@ jobs:
         uses: prefix-dev/setup-pixi@v0.8.1
         with:
             pixi-version: v0.39.2
-      - name: Build with nuitka
+      - name: Build with pyinstaller
         shell: bash
         run: |
-            pixi run nuitka --standalone ./main.py --enable-plugin=tk-inter --macos-create-app-bundle
-            tar cvzf macos-arm64.tar.gz main.dist
+            pixi run pyinstaller -y -D --optimize=2 main.py
+            tar cvzf macos-arm64.tar.gz dist
 
       - name: Pre-Release
         uses: softprops/action-gh-release@v1

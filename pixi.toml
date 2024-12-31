@@ -11,6 +11,4 @@ version = "0.1.0"
 [dependencies]
 python = "<3.13"
 pandas = ">=2.2.3,<3"
-
-nuitka = ">=2.5.9,<3"
-ordered-set = ">=4.1.0,<5"
+pyinstaller = ">=6.11.1,<7"
