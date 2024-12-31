@@ -3,7 +3,7 @@
 name: Build Canary Version
 
 on:
-    workflow_dispatch:
+   push:
 
 jobs:
   release:
@@ -20,7 +20,7 @@ jobs:
       - name: Build with nuitka
         shell: bash
         run: |
-            pixi run nuitka --standalone ./main.py --enable-plugin=tk-inter
+            pixi run nuitka --standalone ./main.py --enable-plugin=tk-inter --macos-create-app-bundle
             tar cvzf macos-arm64.tar.gz main.dist
 
       - name: Pre-Release

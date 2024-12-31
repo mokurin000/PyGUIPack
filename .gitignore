@@ -6,3 +6,5 @@
 # Nuitka
 *.build
 *.dist
+
+*.7z
